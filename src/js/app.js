@@ -15,10 +15,12 @@ App = {
       // If a web3 instance is already provided by Meta Mask.
       App.web3Provider = ethereum;
       web3 = new Web3(ethereum);
+      console.log("this");
     } else {
       // Specify default instance if no web3 instance provided
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       web3 = new Web3(App.web3Provider);
+      console.log("this2");
     }
     return App.initContract();
   },
