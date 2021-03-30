@@ -68,12 +68,11 @@ App = {
     content.hide();
     $('#thanks').hide();
 
-    // Load account data
-    web3.eth.getCoinbase(function(err, account) {
-      if (err === null) {
-        App.account = account;
-        $("#accountAddress").html("Account Address: " + account);
-      }
+  
+    
+    web3.currentProvider.enable().then(function(acc){
+        App.account = acc[0];
+        $("#accountAddress").html("Your Account: " + App.account);
     });
 
     // Load contract data
