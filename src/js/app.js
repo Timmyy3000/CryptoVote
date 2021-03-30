@@ -18,7 +18,7 @@ App = {
     } else {
       // Specify default instance if no web3 instance provided
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-      web3 = new Web3(App.web3Provider);
+      web3 = new Web3(ethereum);
     }
     return App.initContract();
   },
