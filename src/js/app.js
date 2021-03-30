@@ -5,7 +5,7 @@ App = {
   hasVoted: false,
 
   init: function() {
-   
+      console.log("init-f");
     return App.initWeb3();
   },
 
@@ -141,7 +141,7 @@ App = {
 $(function() {
   $(window).load(function() {
 
-    
+       console.log("init");
     App.init();
     
     
