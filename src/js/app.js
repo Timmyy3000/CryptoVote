@@ -11,12 +11,12 @@ App = {
 
   initWeb3: function() {
     console.log("this1");
-    // TODO: refactor conditional
+  
     if (typeof web3 !== 'undefined') {
       // If a web3 instance is already provided by Meta Mask.
       App.web3Provider = ethereum;
       web3 = new Web3(ethereum);
-      console.log("this");
+      
     } else {
       // Specify default instance if no web3 instance provided
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
@@ -28,7 +28,7 @@ App = {
 
   initContract: function() {
     $.getJSON("Election.json", function(election) {
-      // Instantiate a new truffle contract from the artifact
+      // Instantiate a new truffle contract 
       App.contracts.Election = TruffleContract(election);
       // Connect provider to interact with contract
       App.contracts.Election.setProvider(App.web3Provider);
