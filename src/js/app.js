@@ -14,7 +14,7 @@ App = {
   },
 
   initWeb3: function() {
-    console.log("this1");
+    console.log(typeof web3);
   
     if (typeof web3 !== 'undefined') {
       // If a web3 instance is already provided by Meta Mask.
