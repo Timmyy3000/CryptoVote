@@ -1,4 +1,4 @@
-const accounts = web3.eth.accounts;
+
 
 console.log(accounts)
 
@@ -9,12 +9,12 @@ App = {
   hasVoted: false,
 
   init: function() {
-      console.log("init-f");
+      
     return App.initWeb3();
   },
 
   initWeb3: function() {
-    console.log(typeof web3);
+
   
     if (typeof web3 !== 'undefined') {
       // If a web3 instance is already provided by Meta Mask.
@@ -22,7 +22,7 @@ App = {
       web3 = new Web3(ethereum);
       
     } else {
-        console.log("this2");
+   
       // Specify default instance if no web3 instance provided
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       web3 = new Web3(App.web3Provider);
@@ -145,7 +145,7 @@ App = {
 $(function() {
   $(window).load(function() {
 
-       console.log("init");
+      
     App.init();
     
     
