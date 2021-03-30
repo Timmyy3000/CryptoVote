@@ -1,6 +1,5 @@
 
 
-console.log(accounts)
 
 App = {
   web3Provider: null,
