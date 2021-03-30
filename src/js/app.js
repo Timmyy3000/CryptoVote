@@ -10,6 +10,7 @@ App = {
   },
 
   initWeb3: function() {
+    console.log("this1");
     // TODO: refactor conditional
     if (typeof web3 !== 'undefined') {
       // If a web3 instance is already provided by Meta Mask.
