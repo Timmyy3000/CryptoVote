@@ -14,7 +14,7 @@ App = {
     if (typeof web3 !== 'undefined') {
       // If a web3 instance is already provided by Meta Mask.
       App.web3Provider = ethereum;
-      web3 = new Web3(web3.currentProvider);
+      web3 = new Web3(ethereum);
     } else {
       // Specify default instance if no web3 instance provided
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
