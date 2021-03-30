@@ -1,0 +1,592 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+:root {
+    --accent :  rgb(97, 41, 181)
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 50px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .advantages, .ballot, .candidates, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content, 
+.advantages .advantages-content,
+.candidates .candidates-content,
+.ballot .ballot-content,
+.contact .contact-content{
+
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.thanks {
+    background-color: var(--accent);
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.votes {
+    font-family: "Orbitron";
+    font-size: 100px;
+    color: var(--accent);
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background:  var(--accent);
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color:var(--accent);
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbarr styling */
+.navbarr{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbarr.sticky{
+    padding: 15px 0;
+    background: var(--accent);
+}
+.navbarr .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbarr .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbarr .logo a span{
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+.navbarr.sticky .logo a span{
+    color: #fff;
+}
+.navbarr .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbarr .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbarr .menu li a:hover{
+    color: var(--accent);
+}
+.navbarr.sticky .menu li a:hover{
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: var(--accent);
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+  
+
+/* advantages section styling */
+ .candidates{
+    color:#fff;
+    background: #111;
+}
+
+.candidates .title::before{
+    background:  var(--accent);
+    
+}
+
+
+/* ballot section styling */
+
+
+.ballot .ballot-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.ballot .ballot-content  p{
+    text-align: justify;
+}
+.ballot .ballot-content  a{
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--accent);
+    transition: all 0.3s ease;
+}
+.ballot .ballot-content  a:hover{
+    color: var(--accent);
+    background: none;
+}
+
+.ballot .ballot-content  i{
+    font-size: 50px;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.vote-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    
+    padding: 12px 36px;
+   font-size: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid var(--accent);
+    transition: all 0.3s ease;
+  }
+
+.select-vote {
+    background-color: rgb(59, 59, 59);
+    color: white;
+}
+
+.vote-btn:hover{
+    
+    color: var(--accent);
+    background: none;
+  }
+
+  
+  #loader  {
+    font-size: 50px;
+    color: var(--accent);
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: calc(50% - 100px);
+
+
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+  
+.details {
+    background: #111;
+    border-radius: 0px;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    
+}
+
+.ballot .card{
+    width: calc(100%);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.ballot .card:hover{
+    border: 2px solid var(--accent);
+    background: none;
+    color: var(--accent);
+}
+.ballot .card :hover .votes{
+   
+    color: var(--accent);
+}
+.ballot .card .box{
+    transition: all 0.3s ease;
+}
+.ballott .card:hover .box{
+    transform: scale(1.05);
+}
+.ballot .card i{
+    font-size: 50px;
+    color: var(--accent);
+    transition: color 0.3s ease;
+}
+
+.ballot .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.ballot .card p{
+    font-size: 12px;
+    font-weight: 100;
+ 
+}
+
+.ballot .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent);
+    transition: all 0.3s ease;
+}
+.ballot .card:hover img{
+    border-color: #fff;
+}
+
+/* candidates section styling */
+
+
+.candidates .candidates-content {
+    display: flex;
+  
+
+}
+
+.candidates .candidates-content .card{
+    width: calc(50% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.candidates .candidates-content .card:hover{
+    background: var(--accent);
+    color: white;
+}
+.candidates .candidates-content .card :hover .votes{
+   
+    color: white;
+}
+.candidates .candidates-content .card .box{
+    transition: all 0.3s ease;
+}
+.candidates .candidates-content .card:hover .box{
+    transform: scale(1.05);
+}
+.candidates .candidates-content .card i{
+    font-size: 50px;
+    color: var(--accent);
+    transition: color 0.3s ease;
+}
+.candidates .candidates-content .card:hover i{
+    color: #fff;
+}
+.candidates .candidates-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.candidates .candidates-content .card p{
+    font-size: 12px;
+    font-weight: 100;
+ 
+}
+
+.candidates .candidates-content .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent);
+    transition: all 0.3s ease;
+}
+.candidates .candidates-content .card:hover img{
+    border-color: #fff;
+}
+
+
+/* footer section styling */
+footer{
+    background: white;
+    padding: 15px 23px;
+    color: black;
+    text-align: center;
+}
+footer span a{
+    color: var(--accent);
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1300px) {
+    .home .max-width{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbarr .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbarr .menu.active{
+        left: 0;
+    }
+    .navbarr .menu li{
+        display: block;
+    }
+    .navbarr .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .advantages .advantages-content .card,
+    .candidates .candidates-content .card
+    {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .ballot .ballot-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .advantages .advantages-content .card,
+    .candidates .candidates-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .ballot .ballot-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+.choice {
+    height: 400px;
+    display: inline-block;
+    width: 30%;
+  }
+  
+  .result {
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .bar {
+    height: 0%;
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .bar[data-choice="1"] {
+    background-color: red;
+  }
+  
+  .bar[data-choice="2"] {
+    background-color: green;
+  }
+  
+  .bar[data-choice="3"] {
+    background-color: blue;
+  }
+  
+  .label {
+    height: 70px;
+    text-align: center;
+  }
