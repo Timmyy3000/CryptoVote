@@ -22,10 +22,11 @@ App = {
       web3 = new Web3(ethereum);
       
     } else {
+        console.log("this2");
       // Specify default instance if no web3 instance provided
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       web3 = new Web3(App.web3Provider);
-      console.log("this2");
+    
     }
     return App.initContract();
   },
